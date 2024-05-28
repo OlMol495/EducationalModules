@@ -11,12 +11,16 @@ Backend.
 Настроен CORS.
 Используется Swagger.
 Проект "завёрнут" в Docker.
+Фикстуры для заполнения базы данных находятся в файлах userdata.json и educationdata.json, загрузить командойЖ
+python manage.py dumpdata > filename.json
+B Windows: python -Xutf8 manage.py dumpdata > filename.json
+
 Алгоритм запуска сервиса
 Если не использовать Docker
 
 Клонируйте содержимое данного репозитория: git clone https://github.com/OlMol495/EducationalModules.git
 
-.env добавьте свои данные по образцу из env.sample.
+создайте файл .env в корне проекта и добавьте свои данные по образцу из env.sample.
 
 Установите зависимости в venv: pip3 install -r requirements.txt.
 
