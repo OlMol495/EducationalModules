@@ -1,0 +1,94 @@
+[
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$EMYe5Tnf9yH1JnQUK9nWPC$VDw2NpAVWbxoA47kmqK56EHGV+Y+jgroHtnvct/kWxI=",
+      "last_login": "2024-05-28T09:23:00Z",
+      "is_superuser": true,
+      "first_name": "Admin",
+      "last_name": "Pro",
+      "is_staff": true,
+      "date_joined": "2024-05-26T14:14:27Z",
+      "email": "admin@admin.pro",
+      "phone": null,
+      "city": null,
+      "telegram_id": null,
+      "avatar": "",
+      "role": "moderator",
+      "is_active": true,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$nJNYswDaiCqCNZp4lF7NNu$O05EqnUgeZwFg2YglmH82DNzlMq8Wk+2sEG4/VSGSL4=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "User1",
+      "last_name": "Pro",
+      "is_staff": false,
+      "date_joined": "2024-05-28T09:43:54.053Z",
+      "email": "user1@admin.pro",
+      "phone": null,
+      "city": null,
+      "telegram_id": null,
+      "avatar": "",
+      "role": "member",
+      "is_active": true,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$FMPFsx8wJFF1GQwlNfFvcw$rxtJ3z5wfBxhpA1G9OHs/IntSFYuZHzrEPZMCd/5de0=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "Moder1",
+      "last_name": "Pro",
+      "is_staff": false,
+      "date_joined": "2024-05-28T09:46:04Z",
+      "email": "moder1@admin.pro",
+      "phone": null,
+      "city": null,
+      "telegram_id": null,
+      "avatar": "",
+      "role": "moderator",
+      "is_active": true,
+      "groups": [
+        1
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$DFKmbV9GmNL2iXjyTvhR5y$niqXVc9Qk6eS2nHtFZO6FEMcRSGRY4gSqC2K4BLmjBs=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "Moder2",
+      "last_name": "Pro",
+      "is_staff": false,
+      "date_joined": "2024-05-28T09:46:18Z",
+      "email": "moder2@admin.pro",
+      "phone": null,
+      "city": null,
+      "telegram_id": null,
+      "avatar": "",
+      "role": "moderator",
+      "is_active": true,
+      "groups": [
+        1
+      ],
+      "user_permissions": []
+    }
+  }
+]

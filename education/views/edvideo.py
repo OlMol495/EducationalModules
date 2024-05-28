@@ -18,8 +18,8 @@ class EdVideoCreateAPIView(generics.CreateAPIView):
         new_edvideo.save()
 
 
-class EdvideoListAPIView(generics.ListCreateAPIView):
-    """вьюшка на просмотр списка уроков"""
+class EdVideoListAPIView(generics.ListCreateAPIView):
+    """ Вьюшка на просмотр списка видео """
     serializer_class = EdVideoListSerializer
     queryset = EdVideo.objects.all()
     permission_classes = [IsAuthenticated]  # доступ имеют авторизованные юзеры
@@ -32,7 +32,7 @@ class EdVideoRetrieveAPIView(generics.RetrieveAPIView):
     permission_classes = [IsAuthenticated]  # доступ имеют авторизованные юзеры
 
 
-class LessonUpdateAPIView(generics.UpdateAPIView):
+class EdVideoUpdateAPIView(generics.UpdateAPIView):
     """ Вьюшка на редактирование видео """
     serializer_class = EdVideoSerializer
     queryset = EdVideo.objects.all()
@@ -40,7 +40,7 @@ class LessonUpdateAPIView(generics.UpdateAPIView):
     # доступ имеет только хозяин
 
 
-class LessonDestroyAPIView(generics.DestroyAPIView):
+class EdVideoDestroyAPIView(generics.DestroyAPIView):
     """ Dьюшка на удаление видео """
     serializer_class = EdVideoSerializer
     queryset = EdVideo.objects.all()

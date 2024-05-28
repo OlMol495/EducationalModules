@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from education.models import EdModule, EdVideo
-from materials.serializers.lesson import LessonSerializer
+from education.serializers.edvideo import EdVideoSerializer
 
 
 class EdModuleSerializer(serializers.ModelSerializer):
@@ -16,7 +16,6 @@ class EdModuleDetailSerializer(serializers.ModelSerializer):
     """ Сериализатор для просмотра деталей курса """
     edvideo_count = serializers.SerializerMethodField()  # количество видео в модуле
     edvideo = EdVideoSerializer(source='edvideo_set', many=True)
-    subscription = serializers.SerializerMethodField()
 
     class Meta:
         model = EdModule

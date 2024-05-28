@@ -10,4 +10,4 @@ class ValidateVideoLink():
         link = 'https://www.youtube.com/'
         tmp_val = dict(value).get(self.field)
         if not tmp_val.startswith(link):
-            raise serializers.ValidationError(f'Допускаются ссылки только на видео с youtube')
+            raise serializers.ValidationError('Допускаются ссылки только на видео с youtube')
