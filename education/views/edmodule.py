@@ -33,7 +33,7 @@ class EdModuleViewSet(viewsets.ModelViewSet):
             self.permission_classes = [IsAuthenticated]
             # просмотр деталей доступен авторизованным юзерам
         elif self.action == 'update':
-            self.permission_classes = [IsAuthenticated, IsOwner]
+            self.permission_classes = [IsOwner]
             # вносить изменения может только владелец
         elif self.action == 'destroy':
             self.permission_classes = [IsAuthenticated, IsOwner]
