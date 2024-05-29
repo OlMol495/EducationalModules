@@ -11,7 +11,7 @@ Backend.
 Настроен CORS.
 Используется Swagger.
 Проект "завёрнут" в Docker.
-Фикстуры для заполнения базы данных находятся в файлах userdata.json и educationdata.json, загрузить командойЖ
+Фикстуры для заполнения базы данных находятся в файлах userdata.json и educationdata.json, загрузить командой:
 python manage.py dumpdata > filename.json
 B Windows: python -Xutf8 manage.py dumpdata > filename.json
 
