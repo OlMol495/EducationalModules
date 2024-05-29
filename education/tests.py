@@ -310,10 +310,11 @@ class EdModuleTestCase(APITestCase):
 
         # Проверка на невозможность внесения изменений в модуль, созданный другим пользователем
         self.client.force_authenticate(user=self.user3)
-        update_data = self.client.patch(
+        update_data = self.client.put(
             reverse("education:edmodule-detail", args=[edmodule_id]),
             data={"title": "Updated title"},
         )
+        print(update_data.json())
         self.assertEqual(
             update_data.status_code, status.HTTP_403_FORBIDDEN
         )
