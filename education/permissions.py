@@ -19,3 +19,10 @@ class IsOwner(permissions.BasePermission):
         if request.user == obj.owner:
             return True
         return False
+
+
+class IsAdmin(permissions.BasePermission):
+    message = 'Это действие доступно только админу'
+
+    def has_permission(self, request, view):
+        return request.user.is_staff

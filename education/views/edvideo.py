@@ -1,7 +1,7 @@
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
 from education.models import EdVideo
-from education.permissions import IsModerator, IsOwner
+from education.permissions import IsModerator, IsOwner, IsAdmin
 from education.serializers.edvideo import (EdVideoSerializer,
                                            EdVideoListSerializer, EdVideoDetailSerializer)
 
@@ -9,7 +9,7 @@ from education.serializers.edvideo import (EdVideoSerializer,
 class EdVideoCreateAPIView(generics.CreateAPIView):
     """ Вьюшка на создание обучающего видео """
     serializer_class = EdVideoSerializer
-    permission_classes = [IsAuthenticated, IsModerator]  # создавать могут только модеры
+    permission_classes = [IsAuthenticated, IsModerator | IsAdmin]  # создавать могут только модеры и админ
 
     def perform_create(self, serializer):
         """ Привязывает юзера к размещаемому им видео """
@@ -36,13 +36,13 @@ class EdVideoUpdateAPIView(generics.UpdateAPIView):
     """ Вьюшка на редактирование видео """
     serializer_class = EdVideoSerializer
     queryset = EdVideo.objects.all()
-    permission_classes = [IsAuthenticated, IsOwner]
-    # доступ имеет только хозяин
+    permission_classes = [IsAuthenticated, IsOwner | IsAdmin]
+    # доступ имеет только хозяин и админ
 
 
 class EdVideoDestroyAPIView(generics.DestroyAPIView):
     """ Dьюшка на удаление видео """
     serializer_class = EdVideoSerializer
     queryset = EdVideo.objects.all()
-    permission_classes = [IsAuthenticated, IsOwner]
-    # доступ имеет только хозяин
+    permission_classes = [IsAuthenticated, IsOwner | IsAdmin]
+    # доступ имеет только хозяин и админ

@@ -257,12 +257,12 @@ class EdModuleTestCase(APITestCase):
             response.json(),
             [
                 {
-                    'id': 8,
+                    'id': self.edmodule.id,
                     'module_number': 1,
                     'title': 'Test',
                     'description': 'Test',
                     'image': None,
-                    'owner': 13
+                    'owner': self.user.pk
                 }
             ]
         )
@@ -314,7 +314,7 @@ class EdModuleTestCase(APITestCase):
             reverse("education:edmodule-detail", args=[edmodule_id]),
             data={"title": "Updated title"},
         )
-        print(update_data.json())
+
         self.assertEqual(
             update_data.status_code, status.HTTP_403_FORBIDDEN
         )
